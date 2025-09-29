@@ -1,8 +1,8 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" href="style.css" />
-    <!--Import A-Frame-->
+    <!-- Import A-Frame -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
 
     <!-- AR.JS w/o NFT but w/ marker + location based support -->
@@ -14,27 +14,34 @@
 
   <body>
     <a-scene embedded arjs>
+      <!-- Marcador 1 (Hiro) -->
       <a-marker preset="hiro">
         <!--<a-box position="0 0.5 0" color="red"></a-box>-->
-        <!--gltf-model="../models/trex/scene.gltf"-->
-        <a-entity
-          position="0 0 0"
-          scale="0.1 0.1 0.1"
-          gltf-model="models/gears/gears.glb"
-          animation-mixer
-        ></a-entity>
+        <a-entity>
+          <a-entity
+            position="0 0 0"
+            scale="0.1 0.1 0.1"
+            gltf-model="models/gears/gears.glb"
+            animation-mixer
+          ></a-entity>
+        </a-entity>
       </a-marker>
-            <!-- Marcador 2 (Kanji) con el modelo 2 -->
+
+      <!-- Marcador 2 (Kanji) -->
       <a-marker preset="kanji">
-        <a-entity
-          position="0 0 0"
-          rotation="0 0 90"
-          scale="0.5 0.5 0.5"
-          gltf-model="models/embrio/-y2.glb"
-          animation-mixer
-        ></a-entity>
+        <!-- Wrapper para que el marcador no bloquee tu rotación -->
+        <a-entity>
+          <a-entity
+            position="0 0 0"
+            rotation="0 0 90"
+            scale="0.5 0.5 0.5"
+            gltf-model="models/embrio/-y2.glb"
+            animation-mixer
+          ></a-entity>
+        </a-entity>
       </a-marker>
-      
+
+      <!-- Cámara -->
       <a-entity camera></a-entity>
     </a-scene>
   </body>
