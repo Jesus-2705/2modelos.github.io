@@ -14,12 +14,12 @@
 
   <body>
     <a-scene embedded arjs>
+
       <!-- Marcador 1 (Hiro) -->
       <a-marker preset="hiro">
-        <a-entity>
+        <!-- Wrapper para asegurar rotación fija -->
+        <a-entity position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5">
           <a-entity
-            position="0 0 0"
-            scale="0.5 0.5 0.5"
             gltf-model="models/embrio/anane.glb"
             animation-mixer
           ></a-entity>
@@ -28,7 +28,6 @@
 
       <!-- Marcador 2 (Kanji) -->
       <a-marker preset="kanji">
-        <!-- Wrapper para aplicar rotación global al modelo -->
         <a-entity position="0 0 0" rotation="0 0 0" scale="0.5 0.5 0.5">
           <a-entity
             gltf-model="models/gears/gears.glb"
