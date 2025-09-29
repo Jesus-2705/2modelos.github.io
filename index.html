@@ -16,7 +16,6 @@
     <a-scene embedded arjs>
       <!-- Marcador 1 (Hiro) -->
       <a-marker preset="hiro">
-        <!--<a-box position="0 0.5 0" color="red"></a-box>-->
         <a-entity>
           <a-entity
             position="0 0 0"
@@ -29,12 +28,9 @@
 
       <!-- Marcador 2 (Kanji) -->
       <a-marker preset="kanji">
-        <!-- Wrapper para que el marcador no bloquee tu rotación -->
-        <a-entity>
+        <!-- Wrapper para aplicar rotación global al modelo -->
+        <a-entity position="0 0 0" rotation="-90 0 0" scale="0.5 0.5 0.5">
           <a-entity
-            position="0 0 0"
-            rotation="45 0 0"
-            scale="0.5 0.5 0.5"
             gltf-model="models/embrio/-y2.glb"
             animation-mixer
           ></a-entity>
